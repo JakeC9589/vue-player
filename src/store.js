@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -10,11 +11,17 @@ export default new Vuex.Store({
       'https://www.youtube.com/channel/UCeJUVLHMdWHNklmkki7ApLg',
       'https://www.linkedin.com/in/jakegcunningham/',
       'https://jakegcunningham.wordpress.com/'
-    ]
+    ],
+
+    search: '',
+    results: ''
   },
   getters:{
     countLinks: state =>{
       return state.links.length
+    },
+    returnResults: state=>{
+      return state.results
     }
   },
   mutations: {
@@ -26,6 +33,12 @@ export default new Vuex.Store({
     },
     REMOVE_ALL: (state) =>{
       state.links = []
+    },
+    SET_SEARCH:(state, query) =>{
+      state.search = query
+      axios.get('https://images-api.nasa.gov/search?q=' + state.search + '&media_type=image').then(response =>{
+        state.results = response.data.collection.items
+      })
     }
   },
   actions: {
@@ -40,5 +53,6 @@ export default new Vuex.Store({
         }, 1500)
       })
     }
+
   }
 })

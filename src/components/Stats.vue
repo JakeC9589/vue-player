@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1>A different Component</h1>
+    <h1>The Remove Component</h1>
     <p>There are currently {{ countLinks }} links</p>
 
     <button v-on:click="removeAllLinks">Remove all links</button>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import { mapGetters, mapMutations, mapActions } from 'vuex'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'Stats',

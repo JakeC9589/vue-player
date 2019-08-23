@@ -17,18 +17,21 @@
 
     <div class = "right">
       <stats />
+      <nasa />
     </div>
   </div>
 </template>
 
 <script>
-  import { mapState, mapMutations, mapActions } from 'vuex'
-  import Stats from '@/components/Stats.vue'
+import { mapState, mapMutations, mapActions } from 'vuex'
+import Stats from '@/components/Stats.vue'
+import Nasa from '@/components/Nasa.vue'
 
 export default {
   name: 'HelloWorld',
   components:{
-    Stats
+    Stats,
+    Nasa
   },
   computed: {
     ...mapState([
