@@ -4,3 +4,6 @@ I feel that this would serve as a decent jumping off point for an application th
 
 I used tutorials from DesignCourse on youtube 
 https://www.youtube.com/channel/UCVyRiMvfUNMA1UPlDPzG5Ow
+
+and also Program with Erik
+https://youtu.be/GiIQce7Rx4Y
